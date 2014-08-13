@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="traingle" class="org.ravikanth.spring5.Triangle" abstract="true">
+	<property name="pointA" >
+		<bean class="org.ravikanth.spring5.Piont">
+			<property name="x" value="0"/>
+			<property name="y" value="0"/>
+		</bean>
+	</property>
+</bean>
+
+
+<bean id="traingle1" class="org.ravikanth.spring5.Triangle" parent="triangle">
+	<property name="pointB">
+		<bean class="org.ravikanth.spring5.Point">
+			<property name="x" value=0""/>
+			<property name="y" value="10"></property>
+		</bean>
+	</property>
+</bean>
+</beans>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--  This bean cannot be instantiated. -->
+<bean id="triangle" class="org.javabrains.spring.beanInheritance.Triangle" abstract="true">
+	<property name="pointA" >
+		<bean class="org.javabrains.spring.beanInheritance.Point">
+			<property name="x" value="20"/>
+			<property name="y" value="20"/>
+		</bean>
+	</property>
+</bean>
+
+<!-- This bean inherits the above bean. -->
+<bean id="triangle1" class="org.javabrains.spring.beanInheritance.Triangle" parent="triangle">
+	<property name="pointB">
+		<bean class="org.javabrains.spring.beanInheritance.Point">
+			<property name="x" value="0"/>
+			<property name="y" value="10"></property>
+		</bean>
+	</property>
+</bean>
+</beans>
